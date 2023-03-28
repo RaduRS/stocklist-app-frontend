@@ -1,0 +1,117 @@
+.product-list {
+  color: #333;
+  .inventory-table {
+    margin-top: 3rem;
+  }
+  .table {
+    padding: 5px;
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 5rem;
+    .search {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 1.4rem;
+
+      thead {
+        border-top: 2px solid var(--light-blue);
+        border-bottom: 2px solid var(--light-blue);
+      }
+
+      th {
+        border: 1px solid #eee;
+      }
+
+      th,
+      td {
+        vertical-align: middle;
+        text-align: left;
+        padding: 8px;
+
+        &.icons {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          > * {
+            margin-right: 7px;
+            cursor: pointer;
+            vertical-align: middle;
+            align-self: center;
+            width: 100%;
+            display: flex;
+            // justify-content: space-between;
+          }
+        }
+        &.last-cell {
+          // Add this block
+          width: 80px;
+        }
+      }
+
+      tr {
+        border-bottom: 1px solid #ccc;
+      }
+
+      tr:nth-child(even) {
+        background-color: #fff;
+      }
+      tbody {
+        tr:hover {
+          cursor: pointer;
+          background-color: rgba(31, 147, 255, 0.3);
+        }
+      }
+    }
+  }
+}
+
+.inventory-items-text {
+  margin: 0 !important;
+}
+
+.inventory-items-container {
+  margin-bottom: 1rem;
+}
+
+.delete-item,
+.edit-item {
+  flex: 0 0 auto; /* Add this line */
+  width: 100px !important;
+  height: 30px !important;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: red;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  background: #e62222;
+  margin: 0 !important;
+}
+
+.delete-item .icon-button,
+.edit-item .icon-button {
+  height: 30px !important;
+}
+
+.edit-item .icon-button {
+  border-left: 1px solid #ca8608 !important;
+}
+
+.edit-item .icon-button:hover {
+  border: none !important;
+}
+
+.edit-button {
+  margin-right: 1rem;
+}
+
+.edit-item {
+  background: #ffab0f !important;
+}

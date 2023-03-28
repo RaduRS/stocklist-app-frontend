@@ -1,0 +1,57 @@
+.container-search {
+  position: relative;
+  --size-button: 40px;
+}
+
+.input {
+  padding-left: var(--size-button);
+  height: var(--size-button);
+  font-size: 15px;
+  border: 1px solid grey;
+  color: #000;
+  outline: none;
+  width: 0;
+  opacity: 0;
+  transition: all ease 0.3s;
+  background-color: #fff;
+  //   box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgba(95, 94, 94, 0.25),
+  //     inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.input.expanded {
+  width: 20vw; /* Set the width to 25% of the viewport width */
+  opacity: 1;
+  cursor: text;
+}
+
+.container-search .icon {
+  position: absolute;
+  width: var(--size-button);
+  height: var(--size-button);
+  top: 0;
+  left: 0;
+  padding: 8px;
+  cursor: pointer;
+  background-color: lightgrey; /* Add this line */
+  border-radius: 50%; /* Add this line */
+}
+
+.container-search .icon.active {
+  background-color: transparent; /* Set the background color to transparent when active */
+}
+
+.container-search .icon svg {
+  width: 100%;
+  height: 100%;
+  fill: white; /* Add this line */
+}
+
+.container-search .icon.clicked {
+  background-color: transparent; /* Add this line */
+}
+
+.container-search .icon.clicked svg {
+  fill: currentColor; /* Add this line */
+}

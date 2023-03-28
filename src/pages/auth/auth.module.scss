@@ -1,0 +1,120 @@
+.auth {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .toHome {
+    position: absolute !important;
+  }
+  .img {
+    animation: slide-down 0.5s ease;
+    height: 30px;
+    margin-top: 1rem;
+  }
+
+  p {
+    color: black !important;
+    font-size: 0.9rem;
+  }
+
+  a {
+    font-size: 0.9rem;
+    color: #ff4502;
+  }
+
+  a:hover {
+    color: #ff8d63;
+    text-decoration: underline;
+  }
+
+  .loginButton {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    border: 2px solid #69a366 !important;
+  }
+
+  .loginButton:hover {
+    border: 2px solid #ccc !important;
+    color: black;
+    background: transparent;
+  }
+
+  .form {
+    width: 35rem;
+    padding: 1.5rem;
+    animation: slide-up 0.5s ease;
+    background-color: #fff;
+    h2 {
+      color: var(--color-danger);
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+    }
+    form {
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        display: block;
+        font-size: 1.2rem;
+        font-weight: 300;
+        padding: 1rem;
+        margin: 1.5rem auto;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-bottom: 3px solid #ccc;
+        border-radius: 3px;
+        outline: none;
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+          border-bottom: 3px solid #55c57a;
+        }
+
+        &:focus:invalid {
+          border-bottom: 3px solid #ff7730;
+        }
+      }
+      .links {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0;
+      }
+
+      p {
+        text-align: center;
+        margin: 1rem;
+      }
+    }
+    .register {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(-5rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes slide-down {
+    0% {
+      transform: translateY(5rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .img {
+    display: none;
+  }
+}

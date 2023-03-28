@@ -1,0 +1,45 @@
+.info-box {
+  width: 20%;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  vertical-align: middle;
+  flex-wrap: wrap;
+  color: #000;
+  transform: translateY(0);
+  transition: all 0.3s;
+  flex-direction: column !important;
+  border: 1px solid gray;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  &:hover {
+    cursor: pointer;
+    // border: 3px solid #000;
+    transform: translateY(-5px);
+  }
+
+  h4 {
+    margin: 2rem 0rem 1rem 0rem;
+  }
+
+
+  .info-icon {
+    padding: 0 .2rem;
+    color: #000;
+  }
+  .info-text {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .info-box {
+    max-width: 100%;
+  }
+}

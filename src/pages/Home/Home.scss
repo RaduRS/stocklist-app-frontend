@@ -1,0 +1,99 @@
+.home {
+  background-color: #073131;
+  min-height: 100vh;
+
+  & nav {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    color: #fff;
+    & > .logo {
+      color: #fff;
+    }
+  }
+}
+
+.title {
+  margin: 5rem auto !important;
+}
+
+.home-numbers {
+  margin: 0rem 1rem !important;
+}
+
+.welcome {
+  margin: 0rem !important;
+}
+
+.hp-button {
+  margin: 5rem auto;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  display: flex;
+}
+.home-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & li a {
+    color: #fff;
+  }
+  & > * {
+    margin-left: 1rem;
+    color: #fff;
+  }
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-text {
+  width: 90%;
+  text-align: center;
+  & > * {
+    color: #fff;
+    margin-bottom: 2rem;
+  }
+  & > h2 span {
+    display: block;
+  }
+  & .hero-buttons a {
+    color: #fff;
+  }
+}
+.hero-image {
+  width: 100%;
+  & img {
+    height: 400px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+  .hero-image {
+    width: 100%;
+    &img {
+      width: 100%;
+    }
+  }
+}

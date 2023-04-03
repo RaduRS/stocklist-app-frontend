@@ -102,7 +102,7 @@ const ProductSummary = ({ products, onOutOfStockClick }) => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:8000/api/weather/current`,
+        `https://stocklist-app-api.onrender.com/api/weather/current`,
         {
           params: {
             lat: latitude,

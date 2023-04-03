@@ -83,14 +83,12 @@ const EditProfile = () => {
         photo: profileImage ? imageURL : profile.photo,
       };
       const data = await updateUser(formData);
-      console.log(data);
       toast.success("User info updated successfully");
       navigate("/profile");
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message);
-      console.log(error);
     }
   };
 

@@ -57,10 +57,6 @@ const ProductDetails = () => {
     if (isLoggedIn) {
       dispatch(getProduct(id));
     }
-
-    if (isError) {
-      console.log(message);
-    }
   }, [isLoggedIn, isError, message, dispatch, id]);
 
   return (

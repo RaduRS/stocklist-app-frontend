@@ -39,7 +39,6 @@ const Reset = () => {
       const data = await resetPassword(userData, resetToken);
       toast.success(data.message);
     } catch (error) {
-      console.log(error.message);
     }
   };
 

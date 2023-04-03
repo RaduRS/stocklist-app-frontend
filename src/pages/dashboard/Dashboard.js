@@ -29,18 +29,9 @@ const Dashboard = () => {
     if (isLoggedIn) {
       dispatch(getProducts());
     }
-
-    if (isError) {
-      console.log(message);
-    }
-  }, [isLoggedIn, isError, message, dispatch]);
+  }, [isLoggedIn, isError, dispatch]);
   return (
     <div>
-      {/* <ProductSummary
-        products={products}
-        onOutOfStockClick={() => setOutOfStockFilter(!outOfStockFilter)}
-      />
-      <ProductList products={products} isLoading={isLoading} /> */}
       <ProductSummary
         products={products}
         onOutOfStockClick={handleOutOfStockClick}

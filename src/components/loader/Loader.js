@@ -17,7 +17,7 @@ const Loader = () => {
   );
 };
 
-const SpinnerImage = () => {
+export const SpinnerImage = () => {
   return (
     <div className="--center-all">
       <div className="loaderRectangle">

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/stocklist-logo.jpg";
 import "./Home.scss";
-import heroImage from "../../assets/inv-img2.png";
+import heroImage from "../../assets/inv-img2.jpg";
 import {
   ShowOnLogin,
   ShowOnLogout,
@@ -11,7 +11,7 @@ import {
 const Home = () => {
   return (
     <div className="home">
-      <nav className="container --flex-between">
+      <nav className="--flex-between top-nav">
         <div className="logo">
           <img src={logo} alt="stocklist-logo"></img>
         </div>
@@ -37,10 +37,10 @@ const Home = () => {
           </ShowOnLogin>
         </ul>
       </nav>
-      <section className="container hero">
+      <div className="hero">
         <div className="hero-text">
           <h1 className="title">Inventory & Stock Management</h1>
-          <p>
+          <p className="statement">
             Our cutting-edge solution offers real-time insights, automatic
             alerts, and easy reporting. Keep your supply chain running smoothly
             with accurate stock levels and improved efficiency!
@@ -54,7 +54,7 @@ const Home = () => {
             </ShowOnLogout>
             <ShowOnLogin></ShowOnLogin>
           </div>
-          <div className="--flex-center">
+          <div className="big-number">
             <NumberText num="12k" text="Brand Owners" />
             <NumberText num="27k" text="Active Users" />
             <NumberText num="800+" text="Partners" />
@@ -63,14 +63,14 @@ const Home = () => {
         <div className="hero-image">
           <img src={heroImage} alt="Inventory" />
         </div>
-      </section>
+      </div>
     </div>
   );
 };
 
 const NumberText = ({ num, text }) => {
   return (
-    <div className="--mr">
+    <div>
       <h3 className="--color-white home-numbers">{num}</h3>
       <p className="--color-white">{text}</p>
     </div>

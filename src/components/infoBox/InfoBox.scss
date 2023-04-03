@@ -24,9 +24,8 @@
     margin: 2rem 0rem 1rem 0rem;
   }
 
-
   .info-icon {
-    padding: 0 .2rem;
+    padding: 0 0.2rem;
     color: #000;
   }
   .info-text {
@@ -38,8 +37,17 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
   .info-box {
-    max-width: 100%;
+    width: 45%;
+  }
+  .info-box .info-text {
+    margin: 1rem 0rem;
   }
 }
+
+// @media screen and (max-width: 767px) {
+//   .info-box {
+//     width: 100%;
+//   }
+// }

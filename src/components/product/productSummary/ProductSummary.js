@@ -6,7 +6,6 @@ import InfoBox from "../../infoBox/InfoBox";
 import {
   MdRemoveShoppingCart,
   MdShoppingCart,
-  MdSpaceDashboard,
 } from "react-icons/md";
 import { IoRefresh } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,13 +15,13 @@ import {
   CALC_CATEGORY,
   selectOutOfStock,
   selectTotalStoreValue,
-  selectCategory,
+  // selectCategory,
 } from "../../../redux/features/product/productSlice";
 import { WiDaySunny, WiCloud, WiCloudy, WiRain, WiSnow } from "react-icons/wi";
 
 const earningsIcon = <AiFillPoundCircle size={20} />;
 const productIcon = <MdShoppingCart size={20} />;
-const categoryIcon = <MdSpaceDashboard size={20} />;
+// const categoryIcon = <MdSpaceDashboard size={20} />;
 const outOfStockIcon = <MdRemoveShoppingCart size={20} />;
 
 export const formatNumbers = (x) => {
@@ -33,7 +32,7 @@ const ProductSummary = ({ products, onOutOfStockClick }) => {
   const dispatch = useDispatch();
   const totalStoreValue = useSelector(selectTotalStoreValue);
   const outOfStock = useSelector(selectOutOfStock);
-  const category = useSelector(selectCategory);
+  // const category = useSelector(selectCategory);
 
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -167,12 +166,12 @@ const ProductSummary = ({ products, onOutOfStockClick }) => {
               count={`£ ${formatNumbers(totalStoreValue.toFixed(2))}`}
               cardClass="card2"
             />
-            <InfoBox
+            {/* <InfoBox
               icon={categoryIcon}
               title={"All Categories"}
               count={category.length}
               cardClass="card3"
-            />
+            /> */}
             <InfoBox
               icon={outOfStockIcon}
               title={"Out of stock"}
@@ -184,32 +183,32 @@ const ProductSummary = ({ products, onOutOfStockClick }) => {
                 onChange: handleCheckboxChange,
               }}
             />
-          </div>
-        </div>
-        <div className="wheather">
-          {weatherData && (
-            <>
-              <p className="temp-location">
-                {weatherData.name}, {weatherData.sys.country}
-              </p>
-              <span className="icon-and-degrees">
-                {getWeatherIcon(weatherData.weather[0].main)}
+            <div className="wheather">
+              {weatherData && (
+                <>
+                  <p className="temp-location">
+                    {weatherData.name}, {weatherData.sys.country}
+                  </p>
+                  <span className="icon-and-degrees">
+                    {getWeatherIcon(weatherData.weather[0].main)}
 
-                <p className="main-temp">
-                  {Math.floor(weatherData.main.temp)}
-                  °C
-                </p>
-              </span>
-              <p className="temp-description">
-                {weatherData.weather[0].description}{" "}
-              </p>
-              <IoRefresh
-                size={20}
-                className={`refresh-icon ${loading ? "rotating" : ""}`}
-                onClick={handleRefresh}
-              />
-            </>
-          )}
+                    <p className="main-temp">
+                      {Math.floor(weatherData.main.temp)}
+                      °C
+                    </p>
+                  </span>
+                  <p className="temp-description">
+                    {weatherData.weather[0].description}{" "}
+                  </p>
+                  <IoRefresh
+                    size={20}
+                    className={`refresh-icon ${loading ? "rotating" : ""}`}
+                    onClick={handleRefresh}
+                  />
+                </>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>

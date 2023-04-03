@@ -25,7 +25,7 @@ const menu = [
       },
       {
         title: "Edit",
-        path: "/profile-update",
+        path: "/edit-profile",
       },
     ],
   },

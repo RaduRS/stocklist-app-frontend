@@ -13,7 +13,7 @@ main {
   width: 230px;
   height: 100vh;
   flex-shrink: 0;
-  background-color: var(--color-white);
+  background-color: #073131;
   overflow: auto;
   color: var(-color-dark);
   transition: all 0.5s;
@@ -24,7 +24,6 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 10px 15px;
-  // border-bottom: 2px solid #ccc;
   transition: all 0.5s;
   background-color: #073131;
   height: 70px;
@@ -34,8 +33,9 @@ main {
 }
 
 .logo img {
-  height: 40px !important;
+  height: 50px !important;
 }
+
 .bars {
   display: flex;
   font-size: 25px;
@@ -54,19 +54,16 @@ main {
 .sidebar-item {
   padding: 12px;
   display: block;
-  // border-radius: 5px;
-  // border-bottom: 2px solid #ccc;
-  background-color: rgba(255, 255, 255, 0.1);
   transition: background-color 0.15s;
+  color: #fff;
 }
 
 .s-parent {
-  border-bottom: 2px solid #ccc;
   cursor: pointer;
 }
 
 .sidebar-item:hover {
-  background-color: #eee;
+  background-color: #4fa460;
 }
 
 .sidebar-title {
@@ -78,10 +75,11 @@ main {
 
 .sidebar-title span {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   gap: 12px;
   transition: all 0.5s;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .sidebar-title span .icon {
@@ -90,11 +88,14 @@ main {
   align-items: center;
   width: 1.5em;
   font-size: 25px;
+  filter: invert(100%) sepia(9%) saturate(0%) hue-rotate(200deg)
+    brightness(103%) contrast(103%);
 }
 
 .sidebar-title .arrow-icon {
   cursor: pointer;
   transition: all 0.5s;
+  height: 15px !important;
 }
 
 .sidebar-item.open > .sidebar-title .arrow-icon {
@@ -125,13 +126,8 @@ main {
 }
 
 .s-child {
-  border: 1px solid #ccc;
   border-radius: 3px;
   margin-top: 5px;
-}
-
-.s-child:hover {
-  border: 1px solid var(--light-blue);
 }
 
 a {
@@ -141,12 +137,11 @@ a {
 }
 
 .active {
-  color: #4fa460;
   display: block;
   position: relative;
   width: 100%;
   height: auto;
-  background-color: #eee;
+  background-color: #257735;
 }
 
 .active::after {
@@ -156,9 +151,15 @@ a {
   height: 100%;
   left: 0;
   top: 0;
-  background-color: #64cd79;
+  background-color: #4fa460;
 }
 
 .sublink .sidebar-item .sidebar-title {
   padding-left: 40px;
 }
+
+/* Add this to your SCSS code */
+.sidebar.sidebar-closed {
+  width: 60px;
+}
+

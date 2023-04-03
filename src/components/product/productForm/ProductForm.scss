@@ -25,16 +25,34 @@
       padding: 1rem;
       margin: 1rem auto;
       margin-top: 0.2rem;
+
       width: 100%;
-      border: 1px solid #777;
-      border-radius: 3px;
+      // max-width: 450px;
+      height: 45px;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1.5px solid lightgrey;
       outline: none;
+      transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+      box-shadow: 0px 0px 20px -18px;
+    }
+    input:hover {
+      border: 2px solid lightgrey;
+      box-shadow: 0px 0px 20px -17px;
+    }
+
+    input:active {
+      transform: scale(0.95);
+    }
+
+    input:focus {
+      border: 2px solid grey;
     }
   }
 }
 
 .group {
-  border: 1px solid var(--dark-blue);
+  // border: 1px solid var(--dark-blue);
   padding: 5px;
 }
 
@@ -73,11 +91,6 @@
 .save-button {
   margin: 1rem auto;
   margin-top: 2rem;
-}
-
-.save-button button:hover {
-  background-color: #517d4f !important;
-  border-color: #517d4f;
 }
 
 .price-and-quantity {

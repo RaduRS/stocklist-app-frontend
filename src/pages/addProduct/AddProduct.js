@@ -30,6 +30,13 @@ const AddProduct = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    if (
+      (name === "phone" || name === "price" || name === "quantity") &&
+      !/^\d*$/.test(value)
+    ) {
+      // Ignore non-digit characters
+      return;
+    }
     setProduct({ ...product, [name]: value });
   };
 

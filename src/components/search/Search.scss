@@ -21,7 +21,7 @@
 }
 
 .input.expanded {
-  width: 20vw; /* Set the width to 25% of the viewport width */
+  width: 20vw;
   opacity: 1;
   cursor: text;
 }
@@ -54,4 +54,10 @@
 
 .container-search .icon.clicked svg {
   fill: currentColor; /* Add this line */
+}
+
+@media screen and (max-width: 991px) {
+  .input.expanded {
+    width: 35vw;
+  }
 }

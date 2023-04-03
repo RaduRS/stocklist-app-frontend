@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Sidebar.scss";
 import logoSmall from "../../assets/logo-small.jpg";
 import menuBars from "../../assets/paragraph.png";
@@ -8,13 +8,40 @@ import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
-  const toggle = () => setIsOpen(!isOpen);
+  // const toggle = () => setIsOpen(!isOpen);
 
   const navigate = useNavigate();
 
   const goHome = () => {
     navigate("/");
   };
+
+
+
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      if (window.innerWidth <= 767) {
+        setIsOpen(false);
+      } else {
+        setIsOpen(true);
+      }
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+    handleWindowResize(); // Call the function initially
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
+  const toggle = () => {
+    if (window.innerWidth > 767) {
+      setIsOpen(!isOpen);
+    }
+  };
+
 
   return (
     <div className="layout">

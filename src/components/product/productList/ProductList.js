@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Loader from "../../loader/Loader";
 import "./productList.scss";
 import { MdEdit } from "react-icons/md";
-import { IoIosEye } from "react-icons/io";
+import { BsPlusCircle } from "react-icons/bs";
+
 import Search from "../../search/Search";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -32,7 +33,7 @@ const ProductList = ({ products, isLoading }) => {
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 3;
+  const itemsPerPage = 6;
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
@@ -52,6 +53,9 @@ const ProductList = ({ products, isLoading }) => {
   }, [products, search, dispatch]);
 
   const shortenText = (text, n) => {
+    if (!text) {
+      return "";
+    }
     if (text.length > n) {
       const shortenText = text.substring(0, n).concat("...");
       return shortenText;
@@ -116,8 +120,8 @@ const ProductList = ({ products, isLoading }) => {
                   return (
                     <tr key={_id} onClick={() => handleRowClick(_id)}>
                       <td>{index + 1}</td>
-                      <td>{shortenText(name, 7)}</td>
-                      <td>{shortenText(category, 8)}</td>
+                      <td>{shortenText(name, 10)}</td>
+                      <td>{shortenText(category, 7)}</td>
 
                       <td
                         className={
@@ -136,7 +140,7 @@ const ProductList = ({ products, isLoading }) => {
                         {"￡"}
                         {quantity * price}
                       </td>
-                      <td className="icons last-cell">
+                      <td className="last-cell">
                         <span className="actions">
                           <Link
                             to={`/edit-product/${_id}`}
@@ -181,6 +185,14 @@ const ProductList = ({ products, isLoading }) => {
               </tbody>
             </table>
           )}
+        </div>
+        <div>
+          <Link to="/add-product">
+            <BsPlusCircle
+              size={27}
+              style={{ paddingLeft: "5px" }}
+            ></BsPlusCircle>
+          </Link>
         </div>
         <ReactPaginate
           breakLabel="..."

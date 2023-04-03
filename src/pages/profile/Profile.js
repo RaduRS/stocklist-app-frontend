@@ -5,6 +5,10 @@ import { SET_NAME, SET_USER } from "../../redux/features/auth/authSlice";
 import { getUser } from "../../services/authService";
 import "./Profile.scss";
 import SpinnerImage from "../../components/loader/Loader";
+import Card from "../../components/card/Card";
+import { Link } from "react-router-dom";
+import { MdDescription, MdEmail } from "react-icons/md";
+import { BsFillTelephoneFill } from "react-icons/bs";
 
 const Profile = () => {
   useRedirectLoggedOutUser("/login");
@@ -17,8 +21,6 @@ const Profile = () => {
     setIsLoading(true);
     async function getUserData() {
       const data = await getUser();
-      console.log(data);
-
       setProfile(data);
       setIsLoading(false);
       await dispatch(SET_USER(data));
@@ -29,16 +31,49 @@ const Profile = () => {
   }, [dispatch]);
 
   return (
-    <div className="profile --my2">
+    <div className="profile">
       {isLoading && <SpinnerImage />}
       <>
         {!isLoading && profile === null ? (
           <p>Something went wrong, please reload the page!</p>
         ) : (
-          <Card cardClass={"card --flex-direction-column"}>
+          <div>
+            <div className="profile-background"></div>
+            <Card cardClass={"card --flex-direction-column profile-card"}>
+              <span className="profile-photo">
+                <img src={profile?.photo} alt="profile pic" className="profile-image"/>
+              </span>
+              <span className="profile-data">
+                <div className="profile-container">
+                  <p style={{ alignSelf: "center" }}>
+                    <b>{profile?.name}</b>
+                  </p>
+                  <p>
+                    <MdEmail size={25}></MdEmail>
+                    {profile?.email}
+                  </p>
 
-          <Card
-          </Card>
+                  <p>
+                    <BsFillTelephoneFill size={25}></BsFillTelephoneFill>
+                    {profile?.phone}
+                  </p>
+
+                  <p>
+                    <MdDescription size={25}></MdDescription>
+                    {profile?.bio}
+                  </p>
+
+                  <div>
+                    <Link to="/edit-profile">
+                      <button className="--btn --btn-primary edit-profile-button">
+                        Edit Profile
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </span>
+            </Card>
+          </div>
         )}
       </>
     </div>

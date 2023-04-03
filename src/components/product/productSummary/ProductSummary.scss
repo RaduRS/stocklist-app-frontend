@@ -1,5 +1,5 @@
 .product-summary {
-  width: 70%;
+  width: 100%;
   .info-summary {
     display: flex;
     flex-wrap: wrap;
@@ -34,8 +34,8 @@
   margin: 0 !important;
 }
 
-.info-text p{
-font-size: 1.2rem !important;
+.info-text p {
+  font-size: 1.2rem !important;
 }
 
 .card1 {
@@ -65,7 +65,7 @@ font-size: 1.2rem !important;
 }
 
 .wheather {
-  width: 30%;
+  width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,6 +175,43 @@ input[type="checkbox"]:checked::after {
   opacity: 100%;
 }
 
-// span {
-//   font-size: 2rem;
+@media screen and (max-width: 991px) {
+  .wheather {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .wheather {
+    width: 45%;
+  }
+  .info-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+  .info-text p {
+    font-size: 0.9rem !important;
+  }
+  .info-box h4 {
+    font-size: 1.5rem !important;
+  }
+  .main-temp {
+    font-size: 1.5rem;
+  }
+  .temp-location,
+  .temp-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .info-box:nth-child(1),
+  .info-box:nth-child(2) {
+    width: 100%;
+  }
+}
+// @media screen and (max-width: 767px) {
+//   .wheather {
+//     width: 100%;
+//   }
 // }

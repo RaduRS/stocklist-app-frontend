@@ -15,6 +15,10 @@ const ProductForm = ({
   saveProduct,
   setProduct,
 }) => {
+  const handleWheel = (event) => {
+    event.target.blur();
+  };
+
   return (
     <div className="add-product">
       <Card cardClass={"card"}>
@@ -57,19 +61,23 @@ const ProductForm = ({
             <span>
               <label>Price</label>
               <input
-                type="number"
+                type="text"
                 name="price"
                 value={product?.price}
                 onChange={handleInputChange}
+                onWheel={handleWheel}
+                className="number-input"
               />
             </span>
             <span>
               <label>Quantity</label>
               <input
-                type="number"
+                type="text"
                 name="quantity"
                 value={product?.quantity}
                 onChange={handleInputChange}
+                onWheel={handleWheel}
+                className="number-input"
               />
             </span>
           </div>

@@ -36,17 +36,6 @@ const EditProduct = () => {
     dispatch(getProduct(id));
   }, [dispatch, id]);
 
-  //   useEffect(() => {
-  //     setProduct(productEdit);
-  //     setImagePreview(
-  //       productEdit && productEdit.image ? `${productEdit.image.filePath}` : null
-  //     );
-
-  //     setDescription(
-  //       productEdit && productEdit.description ? productEdit.description : ""
-  //     );
-  //   }, [productEdit]);
-
   useEffect(() => {
     if (productEdit) {
       setProduct((prevProduct) => ({
@@ -62,12 +51,23 @@ const EditProduct = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    if (
+      (name === "phone" || name === "price" || name === "quantity") &&
+      !/^\d*$/.test(value)
+    ) {
+      // Ignore non-digit characters
+      return;
+    }
     setProduct({ ...product, [name]: value });
   };
 
   const handleImageChange = (e) => {
     setProductImage(e.target.files[0]);
     setImagePreview(URL.createObjectURL(e.target.files[0]));
+  };
+
+  const handleWheel = (event) => {
+    event.target.blur();
   };
 
   const saveProduct = async (e) => {

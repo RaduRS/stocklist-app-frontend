@@ -7,7 +7,7 @@
     padding: 5px;
     width: 100%;
     overflow-x: auto;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     .search {
       width: 100%;
       max-width: 300px;
@@ -44,12 +44,15 @@
             align-self: center;
             width: 100%;
             display: flex;
+            // flex-wrap: wrap;
+            gap: 10px;
+
             // justify-content: space-between;
           }
         }
         &.last-cell {
           // Add this block
-          width: 80px;
+          max-width: 80px;
         }
       }
 
@@ -80,8 +83,7 @@
 
 .delete-item,
 .edit-item {
-  flex: 0 0 auto; /* Add this line */
-  width: 100px !important;
+  width: 50% !important;
   height: 30px !important;
   position: relative;
   cursor: pointer;
@@ -104,14 +106,52 @@
   border-left: 1px solid #ca8608 !important;
 }
 
-.edit-item .icon-button:hover {
+.edit-item:hover .icon-button {
   border: none !important;
 }
 
 .edit-button {
   margin-right: 1rem;
+  width: 50%;
 }
 
 .edit-item {
   background: #ffab0f !important;
+  width: 100% !important;
+  display: flex;
+}
+
+.actions {
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (max-width: 1360px) {
+  .text {
+    display: none;
+  }
+  .edit-item .icon-button,
+  .delete-item .icon-button {
+    border: none !important;
+  }
+  .product-list .table table th.last-cell,
+  .product-list .table table td.last-cell {
+    max-width: initial;
+  }
+  .noselect .icon-button {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+  th{
+    font-size: 1.4rem;
+
+  }
+  td {
+    font-size: 1.3rem;
+  }
 }

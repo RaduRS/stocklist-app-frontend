@@ -11,9 +11,10 @@
 
     img {
       width: 100%;
+      height: 100%;
       max-width: 150px;
-      padding-right: 1rem;
-      padding-left: 1rem;
+      max-height: 150px;
+      object-fit: cover;
     }
     span.profile-data {
       margin: 0 1rem;
@@ -159,7 +160,8 @@
     flex-direction: column;
     margin: 0px !important;
   }
-  .two-inputs input, .passwords-inputs input {
+  .two-inputs input,
+  .passwords-inputs input {
     max-width: 100%;
     width: 100%;
   }

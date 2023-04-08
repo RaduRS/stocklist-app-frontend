@@ -3,5 +3,12 @@
   border-radius: 5px;
   box-shadow: var(--box-shadow);
   overflow: hidden;
-  width: 100%;
+  width: 50%;
+}
+
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
 }

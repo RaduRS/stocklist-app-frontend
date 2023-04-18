@@ -56,7 +56,7 @@ const Login = () => {
   return (
     <div className={`container ${styles.auth}`}>
       {isLoading && <Loader />}
-      <Card>
+      <Card cardClass={styles.authCards}>
         <div className={styles.form}>
           <div className="--flex-center">
             <img className={styles.img} src={loginLogo} alt="login"></img>

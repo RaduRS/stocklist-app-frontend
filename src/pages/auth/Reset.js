@@ -38,13 +38,12 @@ const Reset = () => {
     try {
       const data = await resetPassword(userData, resetToken);
       toast.success(data.message);
-    } catch (error) {
-    }
+    } catch (error) {}
   };
 
   return (
     <div className={`container ${styles.auth}`}>
-      <Card>
+      <Card cardClass={styles.authCards}>
         <div className={styles.form}>
           <div className="--flex-center">
             <img

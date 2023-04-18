@@ -4,6 +4,10 @@
   justify-content: center;
   align-items: center;
 
+  .authCards {
+    width: 50%;
+  }
+
   .toHome {
     position: absolute !important;
   }
@@ -116,5 +120,8 @@
 @media screen and (max-width: 700px) {
   .img {
     display: none;
+  }
+  .auth .authCards {
+    width: 100%;
   }
 }

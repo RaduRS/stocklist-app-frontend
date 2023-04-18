@@ -95,7 +95,7 @@ const Login = () => {
             Home
           </Link>
           <span className={styles.register}>
-            <p>&nbsp; Don't have an account yet? &nbsp;</p>
+            <p>&nbsp; Don't have an account yet ? &nbsp;</p>
             <Link to="/register">Register now</Link>
           </span>
         </div>
